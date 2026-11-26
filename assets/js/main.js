@@ -46,6 +46,40 @@
     });
   }
 
+  /* ---------- Gallery lightbox (native <dialog>; links still open the photo without JS) ---------- */
+  const lb = $("#lightbox"), shots = $$(".gallery__item");
+  if (lb && shots.length && lb.showModal) {
+    const img = $("img", lb), cap = $("figcaption", lb);
+    let i = 0;
+    const show = (n) => {
+      i = (n + shots.length) % shots.length;
+      img.src = shots[i].href;
+      img.alt = cap.textContent = shots[i].dataset.caption;
+    };
+    const close = () => lb.close();
+    shots.forEach((a, n) => a.addEventListener("click", (e) => {
+      e.preventDefault(); show(n); lb.showModal(); document.body.classList.add("no-scroll");
+    }));
+    lb.addEventListener("close", () => document.body.classList.remove("no-scroll"));
+    lb.addEventListener("click", (e) => {
+      const act = e.target.closest("[data-lb]")?.dataset.lb;
+      if (act === "prev") show(i - 1);
+      else if (act === "next") show(i + 1);
+      else if (act === "close" || e.target === lb) close();
+    });
+    lb.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") show(i - 1);
+      if (e.key === "ArrowRight") show(i + 1);
+    });
+    let x0 = null; // swipe on phones
+    lb.addEventListener("touchstart", (e) => (x0 = e.touches[0].clientX), { passive: true });
+    lb.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].clientX - x0;
+      if (x0 !== null && Math.abs(dx) > 50) show(dx < 0 ? i + 1 : i - 1);
+      x0 = null;
+    });
+  }
+
   /* ---------- Counters ---------- */
   const counters = $$("[data-count]");
   const showFinal = () => counters.forEach((el) => (el.textContent = el.dataset.count));
@@ -90,6 +124,12 @@
   gsap.from(".card", {
     opacity: 0, y: 60, rotateX: -15, stagger: 0.1, duration: 0.8, ease: "power3.out", clearProps: "transform",
     scrollTrigger: { trigger: ".cards", start: "top 80%" },
+  });
+
+  // gallery: staggered fade-in
+  gsap.from(".gallery__item", {
+    opacity: 0, y: 40, scale: 0.96, stagger: 0.08, duration: 0.7, ease: "power3.out",
+    scrollTrigger: { trigger: ".gallery__grid", start: "top 80%" },
   });
 
   // counters

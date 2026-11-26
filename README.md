@@ -14,7 +14,11 @@ assets/img/           logo, favicon, warrior silhouette for the marching phalanx
 
 ## Editing content
 
-Search `index.html` for `EDIT:` comments: stats, prices, opening hours and contact details.
+Search `index.html` for `EDIT:` comments: stats and contact details still to add.
+
+Gallery photos live in `assets/img/gallery/` as two WebP files each: `name-sm.webp` (720px wide, grid thumbnail)
+and `name.webp` (1600px wide, opened in the lightbox). To add one, export both sizes and copy one
+`<a class="gallery__item">` block in the Gallery section.
 
 ## Run locally
 

@@ -39,6 +39,7 @@
       <nav class="nav__menu" id="navMenu">
         <a href="#about">About</a>
         <a href="#programs">Programs</a>
+        <a href="#gallery">Gallery</a>
         <a href="#membership">Membership</a>
         <a href="#schedule">Schedule</a>
         <a href="#contact">Contact</a>
@@ -145,6 +146,39 @@
             <h3>Weight Loss</h3>
             <p>Structured training plus meal guidance to help you cut fat and keep it off.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <!-- Add photos: put 720px "-sm" + 1600px full WebP in assets/img/gallery and copy one <a> below -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Gallery</p>
+          <h2 class="section__title">Inside the <span class="text-red">Arena</span></h2>
+        </div>
+        <div class="gallery__grid">
+          <a class="gallery__item gallery__item--big" href="assets/img/gallery/community.webp" data-caption="Our Spartan family">
+            <img src="assets/img/gallery/community-sm.webp" alt="Our Spartan family at Flexing Spartans Fitness Center" loading="lazy" decoding="async" width="720" height="405">
+            <span class="gallery__cap">Our Spartan family</span>
+          </a>
+          <a class="gallery__item " href="assets/img/gallery/training-floor.webp" data-caption="Training floor">
+            <img src="assets/img/gallery/training-floor-sm.webp" alt="Training floor at Flexing Spartans Fitness Center" loading="lazy" decoding="async" width="720" height="540">
+            <span class="gallery__cap">Training floor</span>
+          </a>
+          <a class="gallery__item " href="assets/img/gallery/gym-wide.webp" data-caption="Spacious workout area">
+            <img src="assets/img/gallery/gym-wide-sm.webp" alt="Spacious workout area at Flexing Spartans Fitness Center" loading="lazy" decoding="async" width="720" height="540">
+            <span class="gallery__cap">Spacious workout area</span>
+          </a>
+          <a class="gallery__item " href="assets/img/gallery/mind-matter.webp" data-caption="Mind over matter">
+            <img src="assets/img/gallery/mind-matter-sm.webp" alt="Mind over matter at Flexing Spartans Fitness Center" loading="lazy" decoding="async" width="720" height="540">
+            <span class="gallery__cap">Mind over matter</span>
+          </a>
+          <a class="gallery__item " href="assets/img/gallery/machines.webp" data-caption="Strength machines &amp; dumbbells">
+            <img src="assets/img/gallery/machines-sm.webp" alt="Strength machines &amp; dumbbells at Flexing Spartans Fitness Center" loading="lazy" decoding="async" width="720" height="540">
+            <span class="gallery__cap">Strength machines &amp; dumbbells</span>
+          </a>
         </div>
       </div>
     </section>
@@ -262,6 +296,17 @@
       <a href="#home" class="footer__top">Back to top ↑</a>
     </div>
   </footer>
+
+  <!-- Gallery lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lightbox__btn lightbox__close" data-lb="close" aria-label="Close">&times;</button>
+    <button class="lightbox__btn lightbox__prev" data-lb="prev" aria-label="Previous photo">&#8249;</button>
+    <figure class="lightbox__fig">
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__next" data-lb="next" aria-label="Next photo">&#8250;</button>
+  </dialog>
 
   <!-- Shared SVG symbols -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
