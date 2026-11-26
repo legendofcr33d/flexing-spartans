@@ -79,10 +79,10 @@ main, .nav, .footer { position: relative; z-index: 1; }
 .preloader__bar { width: 180px; height: 3px; background: var(--line); overflow: hidden; border-radius: 3px; }
 .preloader__bar span { display: block; height: 100%; width: 40%; background: var(--red); animation: load 1s ease-in-out infinite; }
 .preloader.is-done { opacity: 0; visibility: hidden; }
-@keyframes pulse { 50% { transform: scale(1.04); filter: drop-shadow(0 0 20px rgba(225,14,14,.5)); } }
+@keyframes pulse { 50% { transform: scale(1.04); } }
 @keyframes load { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
 
-#battlefield { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+#battlefield { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100lvh; z-index: 0; pointer-events: none; }
 
 /* 5. Nav */
 .nav {
@@ -125,7 +125,7 @@ main, .nav, .footer { position: relative; z-index: 1; }
     radial-gradient(40% 35% at 25% 35%, rgba(225,14,14,.35), transparent 70%),
     radial-gradient(35% 30% at 75% 25%, rgba(138,12,12,.4), transparent 70%),
     radial-gradient(30% 25% at 60% 70%, rgba(217,164,65,.12), transparent 70%);
-  filter: blur(20px);
+  will-change: transform;
   animation: cape 18s ease-in-out infinite alternate;
 }
 @keyframes cape {
@@ -136,10 +136,10 @@ main, .nav, .footer { position: relative; z-index: 1; }
 .hero__helmet {
   position: absolute; width: min(620px, 90vw); top: 50%; left: 50%;
   translate: -50% -55%;
-  fill: rgba(255,255,255,.035);
+  fill: rgba(225,14,14,.05);
   animation: breathe 8s ease-in-out infinite;
 }
-@keyframes breathe { 50% { transform: scale(1.05); fill: rgba(225,14,14,.06); } }
+@keyframes breathe { 50% { scale: 1.05; opacity: .6; } }
 .hero__content { position: relative; z-index: 2; }
 .hero__logo { width: min(560px, 88vw); height: auto; margin: 0 auto 10px; filter: drop-shadow(0 20px 40px rgba(0,0,0,.7)); }
 .hero__eyebrow { margin-bottom: 14px; }
@@ -157,14 +157,17 @@ main, .nav, .footer { position: relative; z-index: 1; }
 .hero__cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* marching phalanx band */
-.phalanx { position: absolute; left: 0; right: 0; bottom: 0; height: 190px; pointer-events: none; }
+.phalanx { position: absolute; left: 0; right: 0; bottom: 0; height: 190px; pointer-events: none; overflow: hidden; }
 .phalanx::after { content: ""; position: absolute; inset: auto 0 0; height: 60px; background: linear-gradient(transparent, var(--bg)); }
-.phalanx__row { position: absolute; left: 0; right: 0; bottom: 0; background: url("../img/warrior.svg") repeat-x 0 100%; }
-.phalanx__row--back  { height: 130px; background-size: 80px 130px; opacity: .35; bottom: 34px; animation: march 9s linear infinite; }
-.phalanx__row--front { height: 180px; background-size: 110px 180px; opacity: .9; animation: march-front 6s linear infinite, bob .75s ease-in-out infinite; }
-@keyframes march { to { background-position-x: -80px; } }
-@keyframes march-front { to { background-position-x: -110px; } }
-@keyframes bob { 50% { transform: translateY(3px); } }
+.phalanx__row {
+  position: absolute; left: 0; bottom: 0; width: calc(100% + var(--tile));
+  background: url("../img/warrior.svg") repeat-x 0 100% / var(--tile) 100%;
+  will-change: transform;
+}
+.phalanx__row--back  { --tile: 80px; height: 130px; opacity: .35; bottom: 34px; animation: march 9s linear infinite; }
+.phalanx__row--front { --tile: 110px; height: 180px; opacity: .9; animation: march 6s linear infinite, bob .75s ease-in-out infinite; }
+@keyframes march { to { transform: translateX(calc(-1 * var(--tile))); } }
+@keyframes bob { 50% { translate: 0 3px; } }
 
 .scroll-cue { position: absolute; bottom: 26px; left: 50%; translate: -50% 0; z-index: 3; width: 26px; height: 42px; border: 2px solid var(--steel); border-radius: 20px; }
 .scroll-cue span { position: absolute; top: 8px; left: 50%; width: 4px; height: 8px; margin-left: -2px; background: var(--red); border-radius: 2px; animation: cue 1.6s infinite; }
@@ -302,6 +305,7 @@ main, .nav, .footer { position: relative; z-index: 1; }
   .plan--featured { grid-column: span 2; order: -1; }
 }
 @media (max-width: 820px) {
+  .nav.is-scrolled { backdrop-filter: none; background: rgba(10,10,11,.96); }
   .nav__toggle { display: block; }
   .nav__menu {
     position: fixed; inset: var(--nav-h) 0 auto; flex-direction: column; gap: 0;
@@ -321,8 +325,8 @@ main, .nav, .footer { position: relative; z-index: 1; }
   .plan--featured { grid-column: auto; }
   .hero { padding-bottom: 170px; }
   .phalanx { height: 150px; }
-  .phalanx__row--front { height: 140px; background-size: 86px 140px; }
-  .phalanx__row--back { height: 100px; background-size: 62px 100px; }
+  .phalanx__row--front { --tile: 86px; height: 140px; }
+  .phalanx__row--back { --tile: 62px; height: 100px; }
   .footer__inner { flex-direction: column; text-align: center; }
 }
 
