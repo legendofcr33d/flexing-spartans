@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="180" viewBox="0 0 110 180">
+  <!-- One hoplite tile; repeated horizontally to form the marching phalanx -->
+  <g fill="#050505">
+    <!-- spear -->
+    <rect x="86" y="14" width="3.5" height="166"/>
+    <path d="M87.75 0 L94 18 L81.5 18 Z"/>
+    <!-- crest + helmet -->
+    <path d="M30 34 C30 14 48 6 64 12 C56 14 50 20 48 30 Z"/>
+    <circle cx="46" cy="40" r="13"/>
+    <!-- legs -->
+    <rect x="34" y="130" width="9" height="50" rx="3"/>
+    <rect x="50" y="130" width="9" height="50" rx="3"/>
+    <!-- shield -->
+    <circle cx="46" cy="94" r="40"/>
+  </g>
+  <!-- shield rim + lambda -->
+  <circle cx="46" cy="94" r="36" fill="none" stroke="#8a0c0c" stroke-width="3"/>
+  <path d="M30 112 L46 74 L62 112" fill="none" stroke="#8a0c0c" stroke-width="5" stroke-linejoin="round"/>
+</svg>

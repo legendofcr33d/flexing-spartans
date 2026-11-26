@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flexing Spartans Fitness Center</title>
+  <meta name="description" content="Flexing Spartans Fitness Center — strength training, conditioning and personal coaching. Train like a Spartan.">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta property="og:title" content="Flexing Spartans Fitness Center">
+  <meta property="og:description" content="Train like a Spartan. Strength, discipline, honor.">
+  <meta property="og:image" content="assets/img/logo-sm.webp">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <img src="assets/img/logo-sm.webp" alt="">
+    <div class="preloader__bar"><span></span></div>
+  </div>
+
+  <!-- Animated background: embers, helmets, arrow volleys -->
+  <canvas id="battlefield" aria-hidden="true"></canvas>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="nav__brand" aria-label="Flexing Spartans home">
+        <img src="assets/img/logo-sm.webp" alt="Flexing Spartans logo">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__menu" id="navMenu">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#membership">Membership</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#contact">Contact</a>
+        <a href="#membership" class="btn btn--red btn--sm">Join Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero__cape" aria-hidden="true"></div>
+      <svg class="hero__helmet" viewBox="0 0 200 260" aria-hidden="true"><use href="#helmet"/></svg>
+
+      <div class="container hero__content">
+        <img class="hero__logo" src="assets/img/logo.webp" alt="Flexing Spartans Fitness Center logo" width="1452" height="831">
+        <p class="eyebrow hero__eyebrow">Flexing Spartans Fitness Center</p>
+        <h1 class="hero__title">
+          <span class="line">Forge Your</span>
+          <span class="line line--red">Inner Spartan</span>
+        </h1>
+        <p class="hero__sub">Strength. Discipline. Honor. Train hard with warriors who show up every day.</p>
+        <div class="hero__cta">
+          <a href="#membership" class="btn btn--red">Start Training</a>
+          <a href="#programs" class="btn btn--ghost">View Programs</a>
+        </div>
+      </div>
+
+      <div class="phalanx" aria-hidden="true">
+        <div class="phalanx__row phalanx__row--back"></div>
+        <div class="phalanx__row phalanx__row--front"></div>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Strength</span><i>Λ</i><span>Discipline</span><i>Λ</i><span>Honor</span><i>Λ</i><span>Glory</span><i>Λ</i>
+        <span>Strength</span><i>Λ</i><span>Discipline</span><i>Λ</i><span>Honor</span><i>Λ</i><span>Glory</span><i>Λ</i>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div class="about__text" data-reveal>
+          <p class="eyebrow">Who We Are</p>
+          <h2 class="section__title">Built for <span class="text-red">Warriors</span></h2>
+          <p>At Flexing Spartans Fitness Center, we train with the mindset of the ancient Spartans — no shortcuts, no excuses. Whether you're lifting your first barbell or chasing a new PR, our coaches and community will push you further than you thought possible.</p>
+          <ul class="checklist">
+            <li>Complete free weights and strength equipment</li>
+            <li>Certified coaches for every level</li>
+            <li>Clean, spacious and air-conditioned training floor</li>
+            <li>A community that keeps you accountable</li>
+          </ul>
+        </div>
+
+        <!-- EDIT: replace with real numbers -->
+        <div class="stats" data-reveal>
+          <div class="stat"><strong data-count="500">0</strong><span>+</span><p>Active Members</p></div>
+          <div class="stat"><strong data-count="10">0</strong><span>+</span><p>Expert Coaches</p></div>
+          <div class="stat"><strong data-count="5">0</strong><span>+</span><p>Years Strong</p></div>
+          <div class="stat"><strong data-count="7">0</strong><span>/7</span><p>Days Open</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROGRAMS ============ -->
+    <section class="section programs" id="programs">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Our Programs</p>
+          <h2 class="section__title">Choose Your <span class="text-red">Battle</span></h2>
+        </div>
+        <div class="cards">
+          <article class="card" data-tilt>
+            <svg class="card__icon" viewBox="0 0 48 48"><path d="M4 20h4v8H4zM40 20h4v8h-4zM8 16h5v16H8zM35 16h5v16h-5zM13 22h22v4H13z"/></svg>
+            <h3>Strength Training</h3>
+            <p>Barbells, dumbbells and power racks. Build raw strength with proven progressive programs.</p>
+          </article>
+          <article class="card" data-tilt>
+            <svg class="card__icon" viewBox="0 0 48 48"><path d="M24 6c-5 0-8 3-8 7s3 7 8 7 8-3 8-7-3-7-8-7zM12 42l3-16c.5-2.5 2.5-4 5-4h8c2.5 0 4.5 1.5 5 4l3 16h-5l-2-11-2 11h-6l-2-11-2 11z"/></svg>
+            <h3>Bodybuilding</h3>
+            <p>Sculpt muscle with hypertrophy-focused splits, posing guidance and nutrition support.</p>
+          </article>
+          <article class="card" data-tilt>
+            <svg class="card__icon" viewBox="0 0 48 48"><path d="M26 4 10 28h12l-2 16 18-26H26z"/></svg>
+            <h3>HIIT &amp; Conditioning</h3>
+            <p>High-intensity circuits that torch fat and build the stamina of a front-line hoplite.</p>
+          </article>
+          <article class="card" data-tilt>
+            <svg class="card__icon" viewBox="0 0 48 48"><path d="M24 4a20 20 0 1 0 0 40 20 20 0 0 0 0-40zm0 6 10 24h-5l-5-13-5 13h-5z"/></svg>
+            <h3>Functional Training</h3>
+            <p>Kettlebells, sleds, ropes and bodyweight drills for real-world power and mobility.</p>
+          </article>
+          <article class="card" data-tilt>
+            <svg class="card__icon" viewBox="0 0 48 48"><path d="M16 8a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm16 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zM6 40c0-8 4-14 10-14s10 6 10 14zm22 0c0-5-1-9-3-12 2-2 4-3 7-3 5 0 9 5 9 15z"/></svg>
+            <h3>Personal Training</h3>
+            <p>One-on-one coaching with a plan built around your body, schedule and goals.</p>
+          </article>
+          <article class="card" data-tilt>
+            <svg class="card__icon" viewBox="0 0 48 48"><path d="M24 4C14 4 8 12 8 20c0 6 3 9 3 14h26c0-5 3-8 3-14 0-8-6-16-16-16zm-4 12h8v4h-8zM12 38h24v6H12z"/></svg>
+            <h3>Weight Loss</h3>
+            <p>Structured training plus meal guidance to help you cut fat and keep it off.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MEMBERSHIP ============ -->
+    <!-- EDIT: replace prices with your real rates -->
+    <section class="section membership" id="membership">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Membership</p>
+          <h2 class="section__title">Join the <span class="text-red">Phalanx</span></h2>
+        </div>
+        <div class="plans">
+          <article class="plan" data-reveal>
+            <h3>Day Pass</h3>
+            <p class="plan__price"><small>₱</small>100<span>/day</span></p>
+            <ul>
+              <li>Full gym access</li>
+              <li>Locker use</li>
+              <li>Free weights &amp; machines</li>
+            </ul>
+            <a href="#contact" class="btn btn--ghost">Get Day Pass</a>
+          </article>
+          <article class="plan plan--featured" data-reveal>
+            <span class="plan__badge">Most Popular</span>
+            <h3>Monthly Warrior</h3>
+            <p class="plan__price"><small>₱</small>1,200<span>/month</span></p>
+            <ul>
+              <li>Unlimited gym access</li>
+              <li>Free fitness assessment</li>
+              <li>Group classes included</li>
+              <li>Member-only events</li>
+            </ul>
+            <a href="#contact" class="btn btn--red">Join Now</a>
+          </article>
+          <article class="plan" data-reveal>
+            <h3>Spartan Elite</h3>
+            <p class="plan__price"><small>₱</small>3,500<span>/month</span></p>
+            <ul>
+              <li>Everything in Monthly</li>
+              <li>12 personal training sessions</li>
+              <li>Custom meal plan</li>
+              <li>Progress tracking</li>
+            </ul>
+            <a href="#contact" class="btn btn--ghost">Go Elite</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCHEDULE ============ -->
+    <!-- EDIT: replace with your real opening hours -->
+    <section class="section schedule" id="schedule">
+      <div class="container schedule__grid">
+        <div data-reveal>
+          <p class="eyebrow">Opening Hours</p>
+          <h2 class="section__title">The Gates Are <span class="text-red">Open</span></h2>
+          <p>Train early before work or late after your shift. Our doors are open every day of the week.</p>
+        </div>
+        <div class="hours" data-reveal>
+          <div class="hours__row"><span>Monday – Friday</span><strong>6:00 AM – 10:00 PM</strong></div>
+          <div class="hours__row"><span>Saturday</span><strong>7:00 AM – 9:00 PM</strong></div>
+          <div class="hours__row"><span>Sunday</span><strong>8:00 AM – 6:00 PM</strong></div>
+          <div class="hours__row"><span>Holidays</span><strong>8:00 AM – 2:00 PM</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta">
+      <div class="container cta__inner" data-reveal>
+        <h2>This Is <span class="text-red">Sparta</span>. This Is Your Gym.</h2>
+        <p>Your first session starts with one step through our doors.</p>
+        <a href="#contact" class="btn btn--red">Visit Us Today</a>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <!-- EDIT: replace address, phone, email and Facebook link -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2 class="section__title">Report for <span class="text-red">Duty</span></h2>
+        </div>
+        <div class="contact__grid">
+          <div class="contact__item" data-reveal>
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+            <h3>Location</h3>
+            <p>Your gym address here,<br>City, Province</p>
+          </div>
+          <div class="contact__item" data-reveal>
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+            <h3>Call / Text</h3>
+            <p><a href="tel:+639000000000">0900 000 0000</a></p>
+          </div>
+          <div class="contact__item" data-reveal>
+            <svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-3.9 0-5 2.6-5 5v2H6v4h3v11h5V12h3.5l.5-4z"/></svg>
+            <h3>Facebook</h3>
+            <p><a href="https://www.facebook.com/" target="_blank" rel="noopener">Flexing Spartans Fitness Center</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <img src="assets/img/logo-sm.webp" alt="Flexing Spartans logo" class="footer__logo">
+      <p>&copy; <span id="year"></span> Flexing Spartans Fitness Center. All rights reserved.</p>
+      <a href="#home" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Shared SVG symbols -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="helmet" viewBox="0 0 200 260">
+      <path fill-rule="evenodd" d="M100 0C72 4 56 22 54 58h92C144 22 128 4 100 0ZM100 55C55 55 35 90 35 140v65c0 23 20 41 47 47l2-47c0-15 8-25 16-27 8 2 16 12 16 27l2 47c27-6 47-24 47-47v-65c0-50-20-85-65-85ZM52 118c10-10 32-12 42-4v36c-6-10-24-18-42-16ZM148 118c-10-10-32-12-42-4v36c6-10 24-18 42-16Z"/>
+    </symbol>
+  </svg>
+
+  <!-- Plugins: GSAP + ScrollTrigger for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/background.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
